@@ -1,5 +1,7 @@
 # PDFPageSplitter
 
+> Source: https://unix.stackexchange.com/questions/405610/how-can-i-split-each-pdf-page-into-two-pages-using-the-command-line
+
  pdftk PDFNAME.pdf burst
 
 -----
