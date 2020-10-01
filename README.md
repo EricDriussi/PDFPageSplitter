@@ -31,7 +31,9 @@ pdftk PDFNAME.pdf burst
 ```
 
 Use one of the pages to get the dimensions (or get them directly from the original pdf)
-`pdfinfo pg_0001.pdf`
+```
+pdfinfo pg_0001.pdf
+```
 
 Run the script (will output left and right cuts of the bursted pages)
 ```
