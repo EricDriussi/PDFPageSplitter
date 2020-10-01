@@ -3,48 +3,48 @@
 >Splits pdf pages in half
 
 The idea is to take in a full pdf (scanned book style) with two actual book pages per pdf page.
+
 The output should be a new pdf with it's pages matching the actual book pages.
 
 Keep in mind:
-1. Your pdf has to be correctly scanned. That is, all individual pages have the same measures and cutpoints.
-2. Manual tinkering within the script will be necessary to adjust for specifics
+
+- Your pdf has to be correctly scanned. That is, all individual pages have the same measures and cutpoints.
+- Manual tinkering within the script will be necessary to adjust for specifics
 
 
 ## Requirements
 
 1. pdftk 
   * To split the original pdf into its individual pages
-2. java-commons-lang
+1. java-commons-lang
   * Required by pdftk for burst functionality
-3. pdfinfo
+1. pdfinfo
   * Or anything that gives you the exact height and width of your pdf page
-4. ghostscript
+1. ghostscript
   * Used in the script
 
 ## Usage
 
 Burst your pdf into it's individual pages
-```sh
- pdftk PDFNAME.pdf burst
+```
+pdftk PDFNAME.pdf burst
 ```
 
 Use one of the pages to get the dimensions (or get them directly from the original pdf)
-```sh
-pdfinfo pg_0001.pdf
-```
+`pdfinfo pg_0001.pdf`
 
 Run the script (will output left and right cuts of the bursted pages)
-```sh
+```
 ./script.sh
 ```
 
 Create a file to guide pdftk through the pages
-```sh
+```
 ls -1 [lr]*_[0-9]*pdf | sort -n -k3 -t_ > fl
 ```
 
 Build the new pdf
-```sh
+```
 pdftk `cat fl`  cat output newfile.pdf 
 ```
 
