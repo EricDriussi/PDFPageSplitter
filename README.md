@@ -42,7 +42,7 @@ pdfinfo pg_0001.pdf
 
 4. Run the script (will output left and right cuts of the bursted pages)
 ```
-./script.sh
+./PDFPageSplitter.sh
 ```
 **Check the new pages (left and right) for inadequate formatting** and modify left and right page start points within the script
 
